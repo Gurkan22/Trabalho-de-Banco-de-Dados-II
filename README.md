@@ -66,8 +66,8 @@ No pgAdmin, crie o banco `chinook` e execute `Database/Chinook_PostgreSql.sql` n
 Abra os arquivos no Query Tool conectado ao banco `chinook` e execute-os nesta ordem:
 
 1. `Scripts/Parte1/01_consulta_indices.sql`
-2. `Scripts/Parte1/02_consulta_chaves_estrangeiras.sql`
-3. `Scripts/Parte1/03_remover_indices_tabela.sql`
+2. `Scripts/Parte1/02_remover_indices_tabela.sql`
+3. `Scripts/Parte1/03_consulta_chaves_estrangeiras.sql`
 4. `Scripts/Parte1/04_gerar_ddl_esquema.sql`
 5. `Scripts/Parte1/05_dte_fatura.sql`
 6. `Scripts/Parte2/01_manter_total_fatura.sql`
@@ -78,6 +78,10 @@ Abra os arquivos no Query Tool conectado ao banco `chinook` e execute-os nesta o
 Os cenários automatizados terminam com `ROLLBACK`. O script de índices apenas cria o procedimento; a chamada de remoção está comentada. Execute os scripts de criação como proprietário ou administrador do banco. Depois do passo 8, defina uma senha para a role `operador_faturas` no pgAdmin para testar seu acesso restrito.
 
 As regras semânticas e os cenários estão detalhados em [Regras_semanticas.md](Regras_semanticas.md).
+
+## Programação com banco de dados
+
+O trabalho implementa lógica dentro do PostgreSQL com PL/pgSQL: procedures para remoção de índices e inserção controlada, função para gerar DDL, funções de trigger para validar estados e regras semânticas e triggers para manter os totais das faturas. As consultas de catálogo das questões 1 e 3 da Parte 1 são consultas SQL porque o enunciado pede explicitamente a leitura dos catálogos.
 
 ---
 

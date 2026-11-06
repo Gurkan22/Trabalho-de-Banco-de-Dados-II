@@ -84,13 +84,13 @@ BEGIN
     INSERT INTO public.invoice(invoice_id, customer_id, invoice_date, total)
     VALUES (v_invoice_id, v_customer_id, current_timestamp, 0);
     INSERT INTO public.fatura_fluxo(invoice_id, status) VALUES (v_invoice_id, 'aberta');
-    UPDATE public.fatura_fluxo SET status = 'paga' WHERE invoice_id = v_invoice_id;
+    UPDATE public.fatura_fluxo SET status = 'cancelada' WHERE invoice_id = v_invoice_id;
     BEGIN
         UPDATE public.fatura_fluxo SET status = 'aberta' WHERE invoice_id = v_invoice_id;
-        RAISE EXCEPTION 'Falha no teste: transição paga -> aberta foi aceita';
+        RAISE EXCEPTION 'Falha no teste: transição cancelada -> aberta foi aceita';
     EXCEPTION WHEN raise_exception THEN
         IF SQLERRM LIKE 'Falha no teste:%' THEN RAISE; END IF;
-        RAISE NOTICE 'Teste aprovado: transição paga -> aberta rejeitada';
+        RAISE NOTICE 'Teste aprovado: transição cancelada -> aberta rejeitada';
     END;
 END $$;
 ROLLBACK;

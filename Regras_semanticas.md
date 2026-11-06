@@ -12,5 +12,5 @@ O estado operacional de uma fatura é armazenado em `fatura_fluxo`, sem modifica
 
 ## Cenários de demonstração
 
-- Parte 1: inserir uma fatura no fluxo como `aberta`; transicionar para `paga`; tentar `paga -> aberta` e confirmar a rejeição. O script de demonstração reverte a transação ao final.
+- Parte 1: inserir uma fatura no fluxo como `aberta`; transicionar para `cancelada`; tentar `cancelada -> aberta` e confirmar a rejeição. O script de demonstração reverte a transação ao final.
 - Parte 2: tentar pagar uma fatura sem linhas; chamar o procedimento com valores válidos e conferir o total; testar quantidade zero; tentar DML direto com `operador_faturas` e confirmar falta de privilégio.
