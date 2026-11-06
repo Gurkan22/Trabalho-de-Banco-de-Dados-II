@@ -15,10 +15,10 @@ O trabalho está dividido em duas partes. A primeira consulta os metadados do Ch
 
 ## Integrantes
 
-- Victor Hugo Magalhaes de Oliveira
-- Joao Vitor Carvalho Cecim
 - Amanda Souza Zírpolo
+- Joao Vitor Carvalho Cecim
 - Pedro Lucas Almeida dos Santos
+- Victor Hugo Magalhaes de Oliveira
 
 ---
 
